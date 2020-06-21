@@ -1,0 +1,40 @@
+doctype html
+html
+        head
+                block head
+                        meta(charset='UTF-8')
+                        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+                        link(rel='stylesheet' href='/css/style.css')
+                        //<link rel="stylesheet" type="text/css" href="path/to/chartjs/dist/Chart.min.css">
+                        link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+                        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+                        <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" data-auto-replace-svg></script>
+                        
+                        
+                        title Forms | #{title}
+
+        body
+                // HEADER
+                include _header
+
+                // CONTENT
+                block content
+                        h1 This is a placeholder heading
+
+                // FOOTER
+                include _footer
+                
+
+                script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js')
+                //- script(src='/js/mapbox.js')
+                script(src='/js/signup.js')
+                script(src='/js/login.js')
+                script(src='/js/repondre.js')
+                script(src='/js/newForm.js')
+                script(src='/js/newQuestion.js')
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+                script(src='/js/chart.js')
+               
+                
+                //-script(src='/js/bundle.js')

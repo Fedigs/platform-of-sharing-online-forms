@@ -1,0 +1,27 @@
+extends base
+
+block content
+    //link(rel='stylesheet' href='/css/bootstrap.min.css')
+    //<script language="javascript" src="/js/bootstrap.min.js"></script>
+
+    form.repondre.form--login
+        each quest in questions
+            .form__group
+                label.form__label(for=`${quest.titre}`)=quest.contenu
+                if(quest.choix.length==0)
+                    textarea.form__input(id=`${quest._id}`, rows='4', cols='50', required,minlength='2') 
+                else
+                    each choix in quest.choix 
+                        input.form__input(id=`${choix._id}`,type='checkbox', name=`${choix.titre}`, value=`${choix.valeur}`)
+                        label.form__label(for=`${choix.titre}`)=choix.valeur
+                        br
+        .form__group
+        -const questionnaire_s =JSON.stringify(questionnaire)
+        -const questions_s =JSON.stringify(questions)
+        input#questionnaire(type='hidden', value=`${questionnaire_s}`)
+        input#questions(type='hidden', value=`${questions_s}`)
+        button.btn.btn--green Submit
+
+
+
+

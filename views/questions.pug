@@ -1,0 +1,32 @@
+extends base
+
+block content
+    <div class="nform">
+        <a href="/newQuestion"><input type="button" value="create new question" class="btn btn--green qst"/></a>
+    </div>
+    main.main
+        form.newForm.form--login
+            <h1><b><u>Questions:</u></b></h1>
+            br
+            each quest in questions
+                    <div class="card" >
+                        <div class="container-qst">
+                    
+
+                            u.label.form__label(for=`${quest.titre}`)=quest.titre+":"
+                            label.form__label(for=`${quest.contenu}`)=quest.contenu
+                            if(quest.choix.length !==0)
+                                h2 options:
+                                each choix in quest.choix 
+                                    label.form__label(for=`${choix.titre}`)=choix.valeur
+                                    br
+                        </div>
+                    </div>
+                    br
+                        
+
+                
+
+
+
+

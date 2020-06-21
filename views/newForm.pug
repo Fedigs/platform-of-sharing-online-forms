@@ -1,0 +1,61 @@
+extends base
+
+block content
+
+    form.newForm.form--login
+        <h1><b><u>Create a new Form :</u></b></h1>
+        br
+        .form__group
+            label.form__label(for="titre") Title:
+            input#titre.form__input(type='text', placeholder='Title of the Form', required)
+            label.form__label(for="description") Description:
+            textarea.form__input(id="description",placeholder='Description of the Form', rows='4', cols='50', required,minlength='2')
+            label.form__label(for="description") Difficulty:
+            input.form__input(id="easy",type='radio', name="difficulty", value="easy")
+            label.form__label(for="easy") Easy
+            br
+            input.form__input(id="hard",type='radio', name="difficulty", value="hard")
+            label.form__label(for="hard") Hard
+        <center><h1>Select Questions:</h1></center>
+
+
+
+        <table id="createForm" >
+            each quest in questions
+                <tr>     
+                    
+                            <td>
+                                
+                                u.label.form__label(for=`${quest.titre}`)=quest.titre+":"
+                                label.form__label(for=`${quest.contenu}`)=quest.contenu
+                                if(quest.choix.length !==0)
+                                    h2 options:
+                                    each choix in quest.choix 
+                                        label.form__label(for=`${choix.titre}`)=choix.valeur
+                                        br
+                                <td>
+                                    label.form__label(for=`${quest.titre}`)
+                                    input.form__input(id=`${quest._id}`,type='checkbox', name=`${quest.titre}`, value=`${quest.titre}`)
+                                </td>
+                                
+                            </td>
+                            
+                            
+                            
+                </tr>
+                
+            <tr>
+            <td> 
+            .form__group
+            -const questions_s =JSON.stringify(questions)
+            input#questions(type='hidden', value=`${questions_s}`)
+            -const user_s =JSON.stringify(user)
+            input#user(type='hidden', value=`${user_s}`)
+            button.btn.btn--green Submit
+            </td>
+            </tr>
+        </table>
+
+
+
+

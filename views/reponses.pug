@@ -1,0 +1,36 @@
+extends base
+
+block content
+    
+        
+        
+    
+    
+    
+    
+    main.main
+        each rep in QuestionEtReponse
+            <div class="card">
+                <div class="container-qst">
+                    h1=rep.question.contenu
+                    br
+                    h1 Réponse: 
+                    if rep.réponse.type=="libre"
+                        h2=rep.réponse.réponseLibre
+                    if rep.réponse.type=="multiple"
+                        each choix in rep.réponse.réponseChoix
+                            h2=choix.titre
+                    
+                </div>
+            </div>
+            br
+        <div class="nform">
+            //<input class="btn btn--green qst" type="button" value="Statistiques" onclick='graphe(' + tab + ')' />
+            button(type='button' class='btn btn--green qst'  onclick='graphe(' + tab + ')') Statistiques
+        </div>
+        <center><div id="chartDiv">
+            <div  class="chart-container" style="position: relative; height:70vh; width:60vw"></div>   
+        <div></center>   
+        //<input type="button" value="voir graphe" onclick="graphe()" />
+        //<canvas id="myChart" width="400" height="400"></canvas>
+    

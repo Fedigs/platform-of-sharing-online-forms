@@ -1,0 +1,32 @@
+create questionnaire:
+method:post
+127.0.0.1:3000/api/v1/forms/questionnaires
+body :
+
+{
+"titre":"questionnaire8",
+"description":"veuillez répondre à ce questionnaire",
+"questions":[
+{"titre":"question1","type":"multiple","contenu":"1+2=?","réponseChoix":[{"titre":"1","valeur":"1"},{"titre":"2","valeur":"2"},{"titre":"3","valeur":"3"}],"réponseLibre":"réponse libre vide"},{"titre":"question2","type":"multiple","contenu":"1+4=?","réponseChoix":[{"titre":"2","valeur":"2"},{"titre":"3","valeur":"3"},{"titre":"5","valeur":"5"}],"réponseLibre":"réponse libre vide"}]}
+
+Get all questionnaire
+method:GET
+
+127.0.0.1:3000/api/v1/forms/questionnaires/
+
+Get questionnaire
+method:GET
+127.0.0.1:3000/api/v1/forms/questionnaires/5e0f57aad37f602fd8b4af1c
+
+update questionnaire
+method:patch
+127.0.0.1:3000/api/v1/forms/questionnaires/5e0f57aad37f602fd8b4af1c
+
+body:
+{
+	"titre":"hhhhhhhhhh"
+}
+
+delete questionnaire
+method:DELETE
+127.0.0.1:3000/api/v1/forms/questionnaires/5e0f59f2d37f602fd8b4af1f

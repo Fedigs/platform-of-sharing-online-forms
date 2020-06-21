@@ -1,0 +1,38 @@
+extends base
+
+block content
+    //link(rel='stylesheet' href='/css/bootstrap.min.css')
+    //<script language="javascript" src="/js/bootstrap.min.js"></script>
+
+    form.newQuestion.form--login
+        .form__group
+            label.form__label(for='titre') Titre
+            input#titre.form__input(type='text', placeholder='Titre de la question ', required)
+        .form__group
+            label.form__label(for='contenu') Contenu
+            input#contenu.form__input(type='text', placeholder='Contenu de la question', required)
+        .form__group       
+            label.form__label(for="type") Type:
+            <input class="form__input" id="libre" type="radio" name="type"  value="libre" onclick="myFunction('libre')"/>
+            label.form__label(for="libre") Libre
+            br
+            <input class="form__input" id="multiple" type="radio" name="type"  value="multiple" onclick="myFunction('multiple')"/>
+            //input.form__input(id="multiple",type='radio', name="type", value="multiple")
+            label.form__label(for="multiple") Multiple
+            <span id="qt"></span>
+        .form__group
+            <span id="opt">
+
+            <span>
+
+        
+        .form__group
+        -const questionnaire_s =JSON.stringify(questionnaire)
+        -const questions_s =JSON.stringify(questions)
+        input#questionnaire(type='hidden', value=`${questionnaire_s}`)
+        input#questions(type='hidden', value=`${questions_s}`)
+        button.btn.btn--green Submit
+
+
+
+
